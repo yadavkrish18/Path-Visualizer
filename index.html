@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path Visualizer Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-btn-top">☀️</button>
+    
+    <div class="app-container">
+        <header class="studio-card">
+            <div class="brand-section">
+                <h1>Path Visualizer</h1>
+            </div>
+
+            <div class="controls-row">
+                <div class="input-group">
+                    <label>Algorithm</label>
+                    <select id="algo-select">
+                        <option value="astar">A* Search</option>
+                        <option value="dijkstra">Dijkstra's</option>
+                        <option value="bfs">BFS</option>
+                        <option value="dfs">DFS</option>
+                    </select>
+                </div>
+
+                <div class="input-group toggle-group">
+                    <label>Auto-Portals</label>
+                    <label class="switch">
+                        <input type="checkbox" id="portal-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-primary" id="start-btn">Visualize</button>
+                    <button class="btn btn-secondary" id="maze-btn">Generate Maze</button>
+                    <button class="btn btn-outline" id="clear-btn">Clear All</button>
+                </div>
+            </div>
+
+            <div class="stats-bar">
+                <div class="stat">Explored: <span id="stat-nodes">0</span></div>
+                <div class="stat">Path Cost: <span id="stat-cost">0</span></div>
+                <div class="stat">Latency: <span id="stat-time">0ms</span></div>
+            </div>
+        </header>
+
+        <main class="grid-section">
+            <div id="grid" class="node-grid"></div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
